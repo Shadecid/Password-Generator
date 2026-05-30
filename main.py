@@ -1,4 +1,4 @@
-import random
+import secrets
 import string
 
 def check_strength(pass_string):
@@ -26,13 +26,13 @@ def pass_maker():
     
     a = input("Want To add Symbols in your password? : ")
     for _ in range(6):
-        alphabet = random.choice(string.ascii_letters)
+        alphabet = secrets.choice(string.ascii_letters)
         password.append(alphabet)
         
     if "yes" in a.lower():
         print("Sure..\n")
         for _ in range(2):
-            Symbols = random.choice(string.punctuation)
+            Symbols = secrets.choice(string.punctuation)
             password.append(Symbols)
     else:
         print("OK, lets Move Ahead!\n")
@@ -41,7 +41,7 @@ def pass_maker():
     if "yes" in b.lower():
         print("Sure\n")
         for _ in range(4):
-            Num = random.choice(string.digits)
+            Num = secrets.choice(string.digits)
             password.append(Num)
     
     print("OK, Here is your Password")
